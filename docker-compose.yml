@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  frontend:
+    image: luop16/contacts-app:frontend    # Pulls frontend image
+    ports:
+      - "3000:80"                         # Maps frontend port to localhost:3000
+    depends_on:
+      - backend                           # Waits for backend service to start
+
+  backend:
+    image: luop16/contacts-app:backend     # Pulls backend image
+    ports:
+      - "5000:5000"                        # Maps backend port to localhost:5000
